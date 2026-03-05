@@ -1,0 +1,44 @@
+/* Currency display */
+.tx-amt {
+    font-family: 'DM Sans', monospace;
+    font-weight: 600;
+}
+
+.tx-amt.pos::before {
+    content: '+';
+}
+
+.tx-amt.neg::before {
+    content: '-';
+}
+
+/* Table amount alignment */
+td:nth-child(3) {
+    text-align: right;
+    font-family: monospace;
+}
+
+/* Stat cards with UGX */
+.stat-val::after {
+    content: ' UGX';
+    font-size: 14px;
+    color: var(--text3);
+    margin-left: 4px;
+}
+
+/* Remove the after for percentage stats */
+.stat-card.gold .stat-val::after,
+.stat-card.blue .stat-val::after,
+.stat-card.green .stat-val::after,
+.stat-card.red .stat-val::after {
+    content: '' !important;
+}
+
+/* Special handling for savings rate */
+.stat-card.gold .stat-val {
+    font-size: 28px;
+}
+.stat-card.gold .stat-val::after {
+    content: '%' !important;
+    font-size: 18px;
+}
